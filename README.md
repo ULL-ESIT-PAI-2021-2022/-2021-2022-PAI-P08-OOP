@@ -1,3 +1,3 @@
 ## PAI Lab assignment 
 
-Modules and JSON
+Object Oriented Programming
