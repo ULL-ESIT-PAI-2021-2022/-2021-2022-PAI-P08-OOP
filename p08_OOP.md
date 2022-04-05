@@ -110,6 +110,20 @@ funcionamiento de todos sus métodos.
 Desarrolle un programa cliente `complejos.js` que permita operar con números complejos y haga uso de la clase `Complejo` que diseñe.
 El programa cliente definirá un par de números complejos `-1-5i` y `1+i` y realice todas las operaciones
 anteriores utilizando ambos números como operandos.
+
+
+### Ejercicios de Exercism
+Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
+que todos pasen correctamente. 
+Una vez que lo logre, suba su solución a Exercism.
+* [Strain](https://exercism.org/tracks/javascript/exercises/strain). 
+  Las funciones que ha de programar, *keep()* y *discard()* toman ambas dos parámetros, 
+  un array y una función booleana (un predicado) y devuelven un array que contiene (keep) o no (discard) los elementos del array de entrada para los que el predicado es cierto.
+* [Yacht](https://exercism.org/tracks/javascript/exercises/yacht)
+  Si analiza el programa que realiza los tests (`yacht.spec.js`) observará que la función *score()* ha de tener dos parámetros: 
+  un array con las puntuaciones de los lanzamientos de 5 dados y una cadena (string) con el nombre de la jugada y ha de devolver 
+  la puntuación correspondiente a esa jugada.
+
 ## Referencias
 * [Using ES modules in Node.js](https://blog.logrocket.com/es-modules-in-node-today/)
 * [CodeCov](https://docs.codecov.com/docs)
