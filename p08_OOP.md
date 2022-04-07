@@ -1,5 +1,5 @@
 # Práctica 8. Programación Orientada a Objetos en Javascript
-### Factor de ponderación: 7
+### Factor de ponderación: 8
 
 ### Objetivos
 Los objetivos de esta práctica son:
@@ -55,79 +55,113 @@ Configure un fichero `package.json` en el directorio raíz de su repositorio de 
 Revise la información en
 [What is the file package.json?](https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/#:~:text=All%20npm%20packages%20contain%20a,as%20handle%20the%20project's%20dependencies.).
 
-### 1.- La clase *Clock*
-En este ejercicio se propone desarrollar un módulo ES6 que implemente una clase `Clock` 
-para representar un reloj digital con horas y minutos. No es necesario contemplar segundos.
+### Ejercicios de Exercism
+Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
+que todos pasen correctamente. 
+Una vez que lo logre, suba su solución a Exercism.
+1.- [Robot Simulator](https://exercism.org/tracks/javascript/exercises/robot-simulator)
+2.- [Robot Name](https://exercism.org/tracks/javascript/exercises/robot-name)
 
-La clase no ha de usar en modo alguno objetos 
-[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-de JavaScript y se desarrollará usando la sintaxis para clases de JavaScript y poniendo en práctica los principios de
-abstracción y encapsulamiento característicos de la Programación Orientada a Objetos.
+### 3.- La clase *Fecha*
+Desarrolle una clase `Fecha` que permita representar y gestionar fechas.
+No utilice en absoluto la clase `Date` de Javascript.
+En este ejercicio se pretende en todo caso que desarrolle Ud. métodos similares a los disponibles en esa
+clase.
+Incorpore en su clase los miembros de datos (**properties**) y métodos que considere necesarios.
+Incluya un método que permita determinar si el año correspondiente a una fecha es un año bisiesto o
+no.
 
-La clase ha de contener un método *toString()* que permita imprimir en pantalla un objeto *Clock* en el
-formato `hh:mm`.
-La clase ha de contemplar métodos que permitan sumar y restar minutos a un objeto *Clock*.
-Análogamente, dos objetos que representen la misma hora deben ser iguales entre sí.
-Incluya discrecionalmente cualesquiera otras operaciones que considere adecuadas como métodos en la clase `Complejo`.
+Desarrolle un programa cliente `fechas.js` que tome como parámetro una fecha, un número y un nombre de fichero:
+```
+$ node fechas.js 
+Modo de uso: node fechas.js dd/mm/aa N fichero_salida.txt
+Pruebe node fechas.js --help para más información
+```
+El programa deberá imprimir en el fichero de salida (tercer parámetro) las N (segundo parámetro) fechas cronológicamente posteriores a la
+introducida (primer parámetro) con una separación de un día entre fechas sucesivas.
 
-Previo a la implementación de la clase, diseñe y desarrolle un conjunto de tests para probar el correcto
-funcionamiento de todos los métodos de la clase.
+### 4.- La clase *Racional*
+Un 
+[número racional](https://en.wikipedia.org/wiki/Rational_number)
+tiene un numerador y un denominador de la forma `p/q` donde `p` es el numerador y `q` el denominador.
+Por ejemplo, 1/3, 3/4 y 10/4 son números racionales.
 
-Encapsule la clase en un módulo que exporte la misma hacia otros programas clientes que pudieran utilizarla.
+Un número racional no puede tener denominador 0, pero sí puede ser cero el numerador.
+Todo número entero `n` es equivalente al racional `n/1`.
+Los números racionales se utilizan en cálculos precisos que involucran fracciones.
+Por ejemplo, `1/3 = 0.33333 ...`.
+Este número no puede ser representado de forma precisa en formato de punto flotante.
+Para obtener resultados precisos es conveniente usar números racionales.
 
-Desarrolle un programa *cliente* que utilice la clase *Clock* e instancie objetos de esa clase:
-```javascript
-const horaActual = new Clock(11, 59);
-console.log(horaActual.toString());   // 11:59h
+En este ejercicio se propone el diseño de una clase para representar números racionales.
+
+Desarrolle un programa cliente `racionales.js` que permita operar con números racionales y haga uso
+de la clase `Racional` que ha de diseñarse.
+
+Las siguientes deben tomarse como especificaciones del programa a desarrollar:
+* La clase `Racional` incluirá al menos métodos para:
+    * Crear objetos de tipo `Racional`. Se debe implementar un constructor por defecto y uno parametrizado.
+    * Escribir (a fichero o a pantalla) un objeto de tipo `Racional`.
+    * Leer (por teclado o desde fichero) un objeto de tipo `Racional`.
+    * Sumar dos objetos de tipo `Racional`.
+    * Restar dos objetos de tipo `Racional`.
+    * Multiplicar dos objetos de tipo `Racional`.
+    * Dividir dos objetos de tipo `Racional`.
+    * Comparar objetos de tipo `Racional`.
+* El programa cliente ha de permitir leer un fichero de texto en el que figuran pares de números racionales
+separados por espacios de la forma:
+
+```
+a/b c/d
+e/f g/h
+  ...
 ```
 
-### 2.- La clase *Complejo*
-Un
-[número complejo](https://es.wikipedia.org/wiki/N%C3%BAmero_complejo)
-puede representarse como la suma de un número real y un número imaginario, de la forma `a + bi` donde el
-término `a` es la parte real, `b` la parte imaginaria e `i` la
-[unidad imaginaria](https://es.wikipedia.org/wiki/Unidad_imaginaria).
+y para cada par de números racionales, el programa ha de imprimir en otro fichero de salida todas las operaciones posibles
+con cada uno de los pares de números del fichero de entrada, de la forma:
 
-En este ejercicio se propone desarrollar un módulo ES6 que implemente una clase `Complejo` que permita operar con números complejos.
-La clase se desarrollará usando la sintaxis para clases de JavaScript y poniendo en práctica los principios de
-abstracción y encapsulamiento característicos de la Programación Orientada a Objetos.
+```
+a/b + c/d = n/m
+  ...
+```
 
-La clase ha de contener al menos métodos que permitan las siguientes operaciones con números complejos:
+Si el programa se ejecuta sin pasar parámetros en la línea de comandos, debemos obtener el siguiente mensaje:
 
-* `print` Imprimir un número complejo 
-* `add` Sumar 
-* `sub` Restar
-* `mul` Multiplicar
-* `div` Dividir
-* `abs` Calcular el valor absoluto
-* `conj` Calcular el conjugado de un número complejo
+```
+$ node racionales.js 
+Modo de uso: node racionales.js fichero_entrada fichero_salida
+Pruebe node racionales.js --help para más información
+```
 
-Incluya discrecionalmente cualesquiera otras operaciones que considere adecuadas como métodos en la clase `Complejo`.
+Si el programa se ejecuta pasando como parámetro la opción `--help` se ha de obtener:
 
-Previo a la implementación de la clase, diseñe y desarrolle un conjunto de tests para probar el correcto
-funcionamiento de todos sus métodos.
+```
+racionales.js -- Números Racionales
+Modo de uso: node racionales.js fichero_entrada fichero_salida 
 
-Desarrolle un programa cliente `complejos.js` que permita operar con números complejos y haga uso de la clase `Complejo` que diseñe.
-El programa cliente definirá un par de números complejos `-1-5i` y `1+i` y realice todas las operaciones
-anteriores utilizando ambos números como operandos.
+fichero_entrada: Fichero de texto conteniendo líneas con un par de números racionales: `a/b c/d` separados por un espacio
+fichero_salida:  Fichero de texto que contendrá líneas con las operaciones realizadas: `a/b + c/d = n/m`
+```
 
+### 5.- La clase *Vector3D*
+Desarrolle una clase `Vector3D` para representar vectores en el espacio tridimensional.
+La clase contemplará métodos al menos para:
+  * Imprimir en pantalla las componentes de un vector en un formato adecuado 
+  * Sumar un par de vectores
+  * Calcular el producto de un número real por un vector
+  * Calcular el producto escalar de dos vectores
+  * Calcular el módulo de un vector 
+  * Normalizar un vector
 
 ### Ejercicios de Exercism
 Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
 que todos pasen correctamente. 
 Una vez que lo logre, suba su solución a Exercism.
-* [Strain](https://exercism.org/tracks/javascript/exercises/strain). 
-  Las funciones que ha de programar, *keep()* y *discard()* toman ambas dos parámetros, 
-  un array y una función booleana (un predicado) y devuelven un array que contiene (keep) o no (discard) los elementos del array de entrada para los que el predicado es cierto.
-* [Yacht](https://exercism.org/tracks/javascript/exercises/yacht)
-  Si analiza el programa que realiza los tests (`yacht.spec.js`) observará que la función *score()* ha de tener dos parámetros: 
-  un array con las puntuaciones de los lanzamientos de 5 dados y una cadena (string) con el nombre de la jugada y ha de devolver 
-  la puntuación correspondiente a esa jugada.
+* [Robot Simulator](https://exercism.org/tracks/javascript/exercises/robot-simulator)
+* [Robot Name](https://exercism.org/tracks/javascript/exercises/robot-name)
+
 
 ## Referencias
-* [Using ES modules in Node.js](https://blog.logrocket.com/es-modules-in-node-today/)
-* [CodeCov](https://docs.codecov.com/docs)
-* [Jest](https://jestjs.io/)
 * [ESLint](https://eslint.org/)
 * [JSDoc](https://jsdoc.app/)
 * [The Modern Javascript Tutorial](https://javascript.info)
