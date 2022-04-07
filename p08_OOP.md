@@ -75,9 +75,8 @@ que permita representar y gestionar fechas.
 La clase no ha de usar en modo alguno objetos 
 [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 de JavaScript.
-En este ejercicio se pretende en todo caso que desarrolle Ud. métodos similares a los disponibles en esa
-clase.
-Incorpore en su clase los miembros de datos (**properties**) y métodos que considere necesarios.
+En este ejercicio se pretende en todo caso que desarrolle Ud. métodos similares a los disponibles en `Date`.
+Incorpore en su clase los miembros de datos (*properties*) y métodos que considere necesarios.
 Incluya un método que permita determinar si el año correspondiente a una fecha es un año bisiesto o
 no.
 
