@@ -59,6 +59,11 @@ Revise la información en
 Todos los ejercicios se deben desarrollar usando la sintaxis para clases ES6 de JavaScript y poniendo en práctica 
 los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
 
+Previo a la implementación de cada clase, diseñe y desarrolle un conjunto de tests para probar el correcto
+funcionamiento de todos los métodos públicos.
+
+Encapsule las clases en módulos que exporten la correspondiete clase hacia otros programas clientes que pudieran utilizarla.
+
 ### Ejercicios de Exercism
 Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
 que todos pasen correctamente. 
