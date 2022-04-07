@@ -55,6 +55,10 @@ Configure un fichero `package.json` en el directorio raíz de su repositorio de 
 Revise la información en
 [What is the file package.json?](https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/#:~:text=All%20npm%20packages%20contain%20a,as%20handle%20the%20project's%20dependencies.).
 
+
+Todos los ejercicios se deben desarrollar usando la sintaxis para clases ES6 de JavaScript y poniendo en práctica 
+los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
+
 ### Ejercicios de Exercism
 Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
 que todos pasen correctamente. 
@@ -64,7 +68,9 @@ Una vez que lo logre, suba su solución a Exercism.
 
 ### 3.- La clase *Fecha*
 Desarrolle una clase `Fecha` que permita representar y gestionar fechas.
-No utilice en absoluto la clase `Date` de Javascript.
+La clase no ha de usar en modo alguno objetos 
+[Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+de JavaScript.
 En este ejercicio se pretende en todo caso que desarrolle Ud. métodos similares a los disponibles en esa
 clase.
 Incorpore en su clase los miembros de datos (**properties**) y métodos que considere necesarios.
