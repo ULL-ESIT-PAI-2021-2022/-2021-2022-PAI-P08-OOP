@@ -4,13 +4,15 @@
 ### Objetivos
 Los objetivos de esta práctica son:
 * Poner en práctica metodologías y conceptos de Programación Orientada a Objetos en JavaScript.
+* Poner en práctica Principios y Buenas prácticas de programación Orientada a Objetos.
 
 ### Rúbrica de evaluacion del ejercicio
 Se señalan a continuación los aspectos más relevantes (la lista no es exhaustiva)
 que se tendrán en cuenta a la hora de evaluar esta práctica:
-* Se valorará la realización de las diferentes tareas que se proponen
+* Se valorará la realización de las diferentes tareas que se proponen.
 * El comportamiento del programa debe ajustarse a lo solicitado en este enunciado.
 * Capacidad de la programadora de introducir cambios en el programa desarrollado.
+* Conocer y poner en prácticas los principios y buenas prácticas de programación orientada a objetos.
 * Deben usarse estructuras de datos adecuadas para representar los diferentes elementos que intervienen en el problema
 * Acreditar que se sabe generar informes de cubrimiento de código utilizando tanto 
 [Jest](https://jestjs.io/)
@@ -37,31 +39,28 @@ como
 
 ### Indicaciones de caracter general
 En esta práctica y las siguientes se promoverá el uso del paradigma orientado a objetos.
-Así pues los programas estarán organizados en torno a clases que se han de implementar usando la sintaxis para
-clases de JavaScript y poniendo en práctica los principios de abstracción y encapsulamiento característicos 
+Así pues los programas han de organizarse en torno a clases que se han de implementar usando la sintaxis para
+clases ES6 de JavaScript y poniendo en práctica los principios de abstracción y encapsulamiento característicos 
 de la Programación Orientada a Objetos.
+En los ejercicios han de ponerse en práctica los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
+
 Vigile siempre el tipo de visibilidad que elige para los atributos (properties) de sus clases
 y tenga en cuenta tanto las reglas de 
 [estilo](https://google.github.io/styleguide/jsguide.html#features-classes)
 como las 
 [etiquetas JSDoc](https://stackoverflow.com/questions/41715994/how-to-document-ecma6-classes-with-jsdoc)
-relacionadas con el constructo 'class'.
-
-Configure para esta práctica una página web que sirva de índice para mostrar la documentación generada por
-JSDoc para todos los programas que desarrolle.
-
-Configure un fichero `package.json` en el directorio raíz de su repositorio de modo que ejecutando 
-`npm install` queden instaladas todas las dependencias de su proyecto.
-Revise la información en
-[What is the file package.json?](https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/#:~:text=All%20npm%20packages%20contain%20a,as%20handle%20the%20project's%20dependencies.).
-
-Todos los ejercicios se deben desarrollar usando la sintaxis para clases ES6 de JavaScript y poniendo en práctica 
-los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
+relacionadas con el constructo `class`.
 
 Previo a la implementación de cada clase, diseñe y desarrolle un conjunto de tests para probar el correcto
 funcionamiento de todos los métodos públicos.
 
 Encapsule las clases en módulos que exporten la correspondiete clase hacia otros programas clientes que pudieran utilizarla.
+
+Configure para la práctica una página web que sirva de índice para mostrar la documentación generada por
+JSDoc para todos los ejercicios de la práctica.
+
+Configure un fichero `package.json` en el directorio raíz de su repositorio de modo que ejecutando 
+`npm install` queden instaladas todas las dependencias de su proyecto.
 
 ### Ejercicios de Exercism
 Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
