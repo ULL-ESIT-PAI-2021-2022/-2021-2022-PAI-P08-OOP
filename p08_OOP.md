@@ -55,7 +55,6 @@ Configure un fichero `package.json` en el directorio raíz de su repositorio de 
 Revise la información en
 [What is the file package.json?](https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/#:~:text=All%20npm%20packages%20contain%20a,as%20handle%20the%20project's%20dependencies.).
 
-
 Todos los ejercicios se deben desarrollar usando la sintaxis para clases ES6 de JavaScript y poniendo en práctica 
 los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
 
@@ -72,7 +71,8 @@ Una vez que lo logre, suba su solución a Exercism.
 2.- [Robot Name](https://exercism.org/tracks/javascript/exercises/robot-name)
 
 ### 3.- La clase *Fecha*
-Desarrolle una clase `Fecha` que permita representar y gestionar fechas.
+En este ejercicio se propone desarrollar un módulo ES6 que implemente una clase `Fecha` 
+que permita representar y gestionar fechas.
 La clase no ha de usar en modo alguno objetos 
 [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 de JavaScript.
@@ -104,7 +104,7 @@ Por ejemplo, `1/3 = 0.33333 ...`.
 Este número no puede ser representado de forma precisa en formato de punto flotante.
 Para obtener resultados precisos es conveniente usar números racionales.
 
-En este ejercicio se propone el diseño de una clase para representar números racionales.
+Desarrollare un módulo ES6 que implemente una clase `Racional` para representar y operar con números racionales.
 
 Desarrolle un programa cliente `racionales.js` que permita operar con números racionales y haga uso
 de la clase `Racional` que ha de diseñarse.
@@ -154,25 +154,91 @@ fichero_entrada: Fichero de texto conteniendo líneas con un par de números rac
 fichero_salida:  Fichero de texto que contendrá líneas con las operaciones realizadas: `a/b + c/d = n/m`
 ```
 
-### 5.- La clase *Vector3D*
-Desarrolle una clase `Vector3D` para representar vectores en el espacio tridimensional.
-La clase contemplará métodos al menos para:
-  * Imprimir en pantalla las componentes de un vector en un formato adecuado 
-  * Sumar un par de vectores
-  * Calcular el producto de un número real por un vector
-  * Calcular el producto escalar de dos vectores
-  * Calcular el módulo de un vector 
-  * Normalizar un vector
+### 5.- La clase *MySet*
+En este ejercicio se propone desarrollar un módulo ES6 que implemente una clase `MySet` 
+para representar 
+[conjuntos](https://en.wikipedia.org/wiki/Set_(mathematics)) 
+de números naturales.
 
-### Ejercicios de Exercism
-Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
-que todos pasen correctamente. 
-Una vez que lo logre, suba su solución a Exercism.
-* [Robot Simulator](https://exercism.org/tracks/javascript/exercises/robot-simulator)
-* [Robot Name](https://exercism.org/tracks/javascript/exercises/robot-name)
+Obviamente, si en alguna ocasión se precisa utilizar conjuntos, lo que ha de hacerse es utilizar la clase 
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+de JavaScript.
+No obstante en este ejercicio práctico la implementación de la clase `MySet` no ha de usar en modo alguno objetos 
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+de JavaScript.
 
+La clase ha de contener al menos métodos (y/o atributos) que implementen las siguientes operaciones con conjuntos:
+* `toString` Devuelve una cadena que representa el conjunto. Los conjuntos se imprimirán en pantalla con sus
+  elementos incluídos entre llaves, de modo que el conjunto vacío se representa por `{}`.
+* `size` Devuelve el cardinal del conjunto
+* `union` Unión de conjuntos
+* `intersection` Intersección de conjuntos
+* `difference` Complemento relativo
+* `contains` Determina si un elemento pertenece al conjunto
+* `empty` Determina sin un conjunto es vacío
+* `subset` Determina si un conjunto es subconjunto de otro 
+* `disjorint` Indica si dos conjuntos son disjuntos
+* `eql` Indica si dos conjuntos son iguales 
+* `add` Añade un elemento a un conjunto
+
+Para la definición de estas operaciones consulte 
+[Wikipedia](https://en.wikipedia.org/wiki/Set_(mathematics)) 
+así como los métodos y ejemplos de la clase
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) 
+de JavaScript.
+
+Incluya discrecionalmente cualesquiera otras operaciones que considere adecuadas como métodos en la clase
+`MySet`.
+
+Desarrolle un programa cliente `sets.js` que permita operar con conjuntos y haga uso de la clase `MySet` que diseñe.
+El programa cliente realizará operaciones similares a las que figuran en la página MDN correspondiente a la
+clase
+[Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) 
+de JavaScript, por ejemplo:
+```javascript
+const mySet1 = new MySet()
+
+mySet1.add(1)           // Set {1}
+mySet1.add(5)           // Set {1, 5}
+mySet1.add(5)           // Set {1, 5}
+mySet1.has(Math.sqrt(25))  // true
+
+const mySet2 = new MySet([1, 2, 3, 4])
+mySet2.size                    // 4
+```
+
+Observe que el constructor de la clase toma como parámetro un array en el que figuran los elementos con los
+que se inicializa el conjunto.
+
+Por simplicidad asumiremos que los números que intervienen en los conjutos son todos mayores o iguales que 1.
+
+Para representar internamente los conjuntos se pueden utilizar diversas ideas y se propone aquí una que podría
+usarse, si lo consideran conveniente, y que se expone a continuación:
+
+Para representar un conjunto de números (enteros positivos) se utilizarán los bits de un número. 
+Si el bit i-ésimo está a 1 ello indicará que el número *i* pertenece al conjunto. 
+Si ese bit está a 0, ello indica que el número *i* no pertenece al conjunto. 
+De este modo se puede representar conjuntos con tantos números naturales como bits tiene la representación
+binaria del número.
+
+[JavaScript representa todos los
+números](https://stackoverflow.com/questions/2802957/number-of-bits-in-javascript-numbers#:~:text=All%20numbers%20in%20JavaScript%20are,%2D%2D%20will%20be%20represented%20accurately.)
+en formato de punto flotante IEEE-754, pero las operaciones de bits
+las calcula sobre 32 bits (4 bytes) de modo que con un número se pueden representar conjuntos de 32
+elementos (`{1, 2, 3, ..., 32}`).
+
+Una primera aproximación sería usar este esquema limitando los conjuntos a un máximo de 32 elementos.
+Si se requieren conjuntos con un mayor número de elementos sería necesario usar un vector de números.
+Con un vector de `M` valores numéricos se pueden representar conjuntos con un máximo de `32 * M` elementos. 
+Usando este esquema de representación resulta fácil implementar las diferentes operaciones sobre conjuntos
+usando 
+[aritmética de bits](https://medium.com/@soni.dumitru/javascript-bitwise-operations-190001bf1fc).
 
 ## Referencias
+* [Exercism JS](https://exercism.org/tracks/javascript)
+* [Número racional](https://en.wikipedia.org/wiki/Rational_number)
+* [Conjuntos](https://en.wikipedia.org/wiki/Set_(mathematics)) 
+* [Aaritmética de bits](https://medium.com/@soni.dumitru/javascript-bitwise-operations-190001bf1fc).
 * [ESLint](https://eslint.org/)
 * [JSDoc](https://jsdoc.app/)
 * [The Modern Javascript Tutorial](https://javascript.info)
