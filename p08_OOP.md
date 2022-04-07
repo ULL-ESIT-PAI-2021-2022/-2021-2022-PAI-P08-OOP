@@ -18,8 +18,7 @@ que se tendrán en cuenta a la hora de evaluar esta práctica:
 [Jest](https://jestjs.io/)
 como
 [CodeCov](https://docs.codecov.com/docs)
-* Ante la presencia de bugs, el alumnado sabe utilizar el depurador de Visual Studio Code
-* Saber corregir bugs en un programa utilizando el depurador de Visual Studio Code
+* Saber corregir bugs en sus programas utilizando el depurador de Visual Studio Code
 * Ser capaz de desarrollar tests unitarios para sus programas utilizando 
 [Jest](https://jestjs.io/)
 * Acreditar su capacidad para configurar y utilizar 
@@ -27,11 +26,10 @@ como
   y que es capaz de trabajar con la misma en Visual Studio Code.
 * El código ha de estar documentado con 
 [JSDoc](https://jsdoc.app/). 
-  y que es capaz de generar documentación para sus programas utilizando la herramienta.
+  y ha de acreditarse la capacidad de generar documentación para sus programas utilizando la herramienta.
   Haga que la documentación del programa generada con JSDoc esté disponible a través de una web alojada en su máquina IaaS de la asignatura.
-* Acreditar que sabe depurar sus programas usando Visual Studio Code.
 * Ser capaz de resolver problemas de la plataforma Exercism, subiendo sus soluciones a la misma.
-* Acreditar que es capaz de desarrollar y ejecutar programas simples de la plataforma Jutge
+* Acreditar que es capaz de desarrollar y ejecutar programas simples de la plataforma Jutge.
 * Se comprobará que el código que el alumnado escribe se adhiere a las reglas de la 
 [Guía de Estilo de Google para Javascript](https://google.github.io/styleguide/jsguide.html).
 * Acreditar que es capaz de editar ficheros de forma remota en su VM usando Visual Studio
@@ -39,7 +37,7 @@ como
 
 ### Indicaciones de caracter general
 En esta práctica y las siguientes se promoverá el uso del paradigma orientado a objetos.
-Así pues los programas han de organizarse en torno a clases que se han de implementar usando la sintaxis para
+Los programas han de organizarse en torno a clases que se han de implementar usando la sintaxis para
 clases ES6 de JavaScript y poniendo en práctica los principios de abstracción y encapsulamiento característicos 
 de la Programación Orientada a Objetos.
 En los ejercicios han de ponerse en práctica los principios y buenas prácticas que han sido expuestos en las clases de la asignatura.
@@ -66,7 +64,9 @@ Configure un fichero `package.json` en el directorio raíz de su repositorio de 
 Resuelva los siguientes problemas ejecutando los tests correspondientes a cada uno de ellos hasta conseguir
 que todos pasen correctamente. 
 Una vez que lo logre, suba su solución a Exercism.
+
 1.- [Robot Simulator](https://exercism.org/tracks/javascript/exercises/robot-simulator)
+
 2.- [Robot Name](https://exercism.org/tracks/javascript/exercises/robot-name)
 
 ### 3.- La clase *Fecha*
