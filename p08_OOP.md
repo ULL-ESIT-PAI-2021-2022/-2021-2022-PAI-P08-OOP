@@ -77,8 +77,6 @@ La clase no ha de usar en modo alguno objetos
 de JavaScript.
 En este ejercicio se pretende en todo caso que desarrolle Ud. métodos similares a los disponibles en `Date`.
 Incorpore en su clase los miembros de datos (*properties*) y métodos que considere necesarios.
-Incluya un método que permita determinar si el año correspondiente a una fecha es un año bisiesto o
-no.
 
 Desarrolle un programa cliente `fechas.js` que tome como parámetro una fecha, un número y un nombre de fichero:
 ```
@@ -105,12 +103,11 @@ Para obtener resultados precisos es conveniente usar números racionales.
 Desarrollare un módulo ES6 que implemente una clase `Racional` para representar y operar con números racionales.
 
 Desarrolle un programa cliente `racionales.js` que permita operar con números racionales y haga uso
-de la clase `Racional` que ha de diseñarse.
+de la clase `Racional`.
 
 Las siguientes deben tomarse como especificaciones del programa a desarrollar:
 * La clase `Racional` incluirá al menos métodos para:
-    * Crear objetos de tipo `Racional`. Se debe implementar un constructor por defecto y uno parametrizado.
-    * Escribir (a fichero o a pantalla) un objeto de tipo `Racional`.
+    * Escribir un objeto de tipo `Racional`.
     * Leer (por teclado o desde fichero) un objeto de tipo `Racional`.
     * Sumar dos objetos de tipo `Racional`.
     * Restar dos objetos de tipo `Racional`.
@@ -134,7 +131,7 @@ a/b + c/d = n/m
   ...
 ```
 
-Si el programa se ejecuta sin pasar parámetros en la línea de comandos, debemos obtener el siguiente mensaje:
+Si el programa se ejecuta sin pasar parámetros en la línea de comandos, debiera obtenerse el siguiente mensaje:
 
 ```
 $ node racionales.js 
